@@ -1,9 +1,8 @@
 var spawn = require('child_process').spawn;
 
-exports.download = function (config) {
+exports.download = function(config) {
 
-  var child = spawn ('rtmpdump',
-    ['-r', config.src, '-o', config.target]);
+  var child = spawn('rtmpdump', ['-r', config.src, '-o', config.target]);
 
 
   // Match something like
@@ -16,7 +15,7 @@ exports.download = function (config) {
   //Has the download completed?
   var complete = /Download.complete/i;
 
-  child.stderr.on('data', function (data) {
+  child.stderr.on('data', function(data) {
     //onProgress
     if (dataRegex.test(data)) {
       if (typeof config.onProgress === 'function') {
@@ -30,24 +29,21 @@ exports.download = function (config) {
       }
     }
 
-    if(complete.test(data)) {
+    if (complete.test(data)) {
       if (typeof config.onExit === 'function') {
         var info = getData(data);
         if (info && info.hasOwnProperty('percent')) {
           delete info.percent;
         }
         config.onExit(info);
-      }     
+      }
     }
   });
 
-  function getData (data) {
+  function getData(data) {
 
-    var result = dataRegex.exec(data)
-      , kbLoaded
-      , secondsLoaded
-      , percent
-      , info = null;
+    var result = dataRegex.exec(data),
+      kbLoaded, secondsLoaded, percent, info = null;
 
     if (Array.isArray(result) && result.length > 3) {
       kbLoaded = parseFloat(result[1]);
@@ -57,7 +53,7 @@ exports.download = function (config) {
         kbLoaded: kbLoaded,
         secondsLoaded: secondsLoaded,
         percent: percent
-      };     
+      };
     }
 
     return info;
