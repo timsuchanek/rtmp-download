@@ -1,5 +1,19 @@
 var spawn = require('child_process').spawn;
 
+/**
+ * Download a rtmp video.
+ * @param  {object} config {
+      src: Video Url,
+      target: Path to Save the Video,
+      onProgress: function (data) {
+      },
+      onExit: function (data) {
+      },
+      onError: function (error) {
+      }
+    }
+ * @return {[type]}        [description]
+ */
 exports.download = function(config) {
 
   var child = spawn('rtmpdump', ['-r', config.src, '-o', config.target]);
@@ -40,6 +54,16 @@ exports.download = function(config) {
     }
   });
 
+  /**
+   * Extracts the information out of a rtmp dump line.
+   * @param  {string} data One Line of rtmp dump output.
+   * It looks like: 33733.764 kB / 597.76 sec (99.9%)
+   * @return {object} {
+        kbLoaded: kbLoaded,
+        secondsLoaded: secondsLoaded,
+        percent: percent
+      }
+   */
   function getData(data) {
 
     var result = dataRegex.exec(data),
