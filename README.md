@@ -19,7 +19,8 @@ var config = {
 rtmp.download(config);
 ```
 ## Installation
-	$ npm install --save rtmp
+	1. 	$ npm install --save rtmp-download
+	2. Install rtmpdump. Easy Install Package for Mac: [rmtpdump-2.4][3]
 
 ## Data
 The data object of the callbacks onProgress and onExit contains the following data:
@@ -34,3 +35,4 @@ The data object of the callbacks onProgress and onExit contains the following da
 
   [1]: http://en.wikipedia.org/wiki/Real_Time_Messaging_Protocol
   [2]: http://rtmpdump.mplayerhq.hu/
+  [3]: http://trick77.com/wp-content/uploads/2008/01/rtmpdump-2.4_mac_os.zip
