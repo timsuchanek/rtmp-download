@@ -2,7 +2,7 @@ rtmp-download
 =============
 
 A Node Module to download [RTMP][1] Streams.
-**Important:** This Module requires the C lib [rtmpdump][2]
+**Important:** This Module requires the C lib [rtmpdump][2]. [rmtpdump for Mac][3]
 
 
 ```javascript
@@ -19,8 +19,7 @@ var config = {
 rtmp.download(config);
 ```
 ## Installation
-	1. 	$ npm install --save rtmp-download
-	2. Install rtmpdump. Easy Install Package for Mac: [rmtpdump-2.4][3]
+	$ npm install --save rtmp-download
 
 ## Data
 The data object of the callbacks onProgress and onExit contains the following data:
