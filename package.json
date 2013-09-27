@@ -1,6 +1,6 @@
 {
   "name": "rtmp-download",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Wrapper arround rtmp dump",
   "main": "rtmp.js",
   "scripts": {
@@ -8,17 +8,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/vardump/rtmp-download.git"
+    "url": "https://github.com/timsuchanek/rtmp-download.git"
   },
   "keywords": [
     "rtmp",
     "download"
   ],
-  "author": "vardump",
+  "author": "Tim Suchanek <tim.suchanek@gmail.com>",
   "license": "MIT",
   "readmeFilename": "README.md",
   "gitHead": "d716e1ecdf70de2ff3b8ceb15f383eaa546f5619",
   "bugs": {
-    "url": "https://github.com/vardump/rtmp-download/issues"
+    "url": "https://github.com/timsuchanek/rtmp-download/issues"
   }
 }
