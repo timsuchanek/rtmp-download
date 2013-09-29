@@ -22,7 +22,7 @@ rtmp.download(config);
 	$ npm install --save rtmp-download
 
 ## Data
-The data object of the callbacks onProgress and onExit contains the following data:
+The `data` object of the callbacks `onProgress` and `onExit` contains the following data:
 
 ```javascript
 {
