@@ -1,7 +1,7 @@
 rtmp-download
 =============
 
-A Node Module to download [RTMP][1] Streams.
+A Node Module to download [RTMP][1] videos.
 **Important:** This Module requires the C lib [rtmpdump][2]. [rmtpdump for Mac][3]
 
 
